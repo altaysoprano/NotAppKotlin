@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/listeFragment"
         android:name="com.example.notesapp.ListeFragment"
-        android:label="fragment_liste"
+        android:label="Notlarım"
         tools:layout="@layout/fragment_liste" >
         <action
             android:id="@+id/action_listeFragment_to_notEkleFragment"
@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/notEkleFragment"
         android:name="com.example.notesapp.NotEkleFragment"
-        android:label="fragment_not_ekle"
+        android:label="Not Ekle"
         tools:layout="@layout/fragment_not_ekle" >
         <action
             android:id="@+id/action_notEkleFragment_to_listeFragment"

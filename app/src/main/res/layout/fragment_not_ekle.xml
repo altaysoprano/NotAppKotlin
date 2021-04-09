@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     tools:context=".NotEkleFragment">
 
     <ImageView
@@ -25,6 +27,8 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/plain_text"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Not Başlığı"
@@ -42,9 +46,12 @@
         android:gravity="start"
         android:layout_marginTop="30dp"
         android:background="@drawable/plain_text"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
         android:hint="Not Açıklaması"
         android:textColorHint="@android:color/darker_gray"
         android:textColor="@android:color/black"
+        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNotTitle" />

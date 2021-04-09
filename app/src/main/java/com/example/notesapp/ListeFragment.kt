@@ -22,7 +22,7 @@ class ListeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_liste, container, false)
 
-        (activity as AppCompatActivity).supportActionBar!!.title = "Notlarım"
+
 
         view.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_listeFragment_to_notEkleFragment)
