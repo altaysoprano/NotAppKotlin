@@ -4,9 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter(private val butunNotlar : List<Note>) : RecyclerView.Adapter<RecyclerViewAdapter.NotViewHolder>() {
+class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.NotViewHolder>() {
+
+    private var butunNotlar: List<Note> = ArrayList()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.not_item, parent, false)
 
@@ -14,7 +18,7 @@ class RecyclerViewAdapter(private val butunNotlar : List<Note>) : RecyclerView.A
     }
 
     override fun getItemCount(): Int {
-        return itemCount
+        return butunNotlar.size
     }
 
     override fun onBindViewHolder(holder: NotViewHolder, position: Int) {
@@ -24,6 +28,10 @@ class RecyclerViewAdapter(private val butunNotlar : List<Note>) : RecyclerView.A
         holder.notText.text = currentItem.noteText
     }
 
+    fun listeyiGuncelle(notlar : List<Note>) {
+        butunNotlar = notlar
+        notifyDataSetChanged()
+    }
 
     class NotViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val notTitle = itemView.findViewById<TextView>(R.id.not_title_tv)

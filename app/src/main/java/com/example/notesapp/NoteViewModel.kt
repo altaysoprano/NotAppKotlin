@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 class NoteViewModel(application: Application) : AndroidViewModel(application) {
 
     private val noteRepository : NoteRepository
-    private val butunNotlar : LiveData<List<Note>>
+    val butunNotlar : LiveData<List<Note>>
 
     init {
         val noteDao = NoteDatabase.getDatabase(application).noteDao()
@@ -23,9 +23,5 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             noteRepository.notEkle(note)
         }
-    }
-
-    fun notListesiniGetir() : LiveData<List<Note>> {
-        return butunNotlar
     }
 }
