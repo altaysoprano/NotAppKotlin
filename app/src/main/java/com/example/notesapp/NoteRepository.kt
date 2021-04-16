@@ -9,4 +9,8 @@ class NoteRepository(private val noteDao: NoteDao) {
     suspend fun notEkle(note : Note) {
         noteDao.insert(note)
     }
+
+    suspend fun notGuncelle(note : Note) {
+        noteDao.update(note)
+    }
 }

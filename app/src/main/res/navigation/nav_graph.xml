@@ -12,6 +12,14 @@
         <action
             android:id="@+id/action_listeFragment_to_notEkleFragment"
             app:destination="@id/notEkleFragment" />
+        <action
+            android:id="@+id/action_listeFragment_to_notGuncelleFragment"
+            app:destination="@id/notGuncelleFragment">
+            <argument
+                android:name="Note"
+                app:argType="com.example.notesapp.Note"
+                />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/notEkleFragment"
@@ -21,5 +29,19 @@
         <action
             android:id="@+id/action_notEkleFragment_to_listeFragment"
             app:destination="@id/listeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notGuncelleFragment"
+        android:name="com.example.notesapp.NotGuncelleFragment"
+        android:label="Not Güncelle"
+        tools:layout="@layout/fragment_not_guncelle">
+    >
+        <action
+            android:id="@+id/action_notGuncelleFragment_to_listeFragment"
+            app:destination="@id/listeFragment" />
+        <argument
+            android:name="Note"
+            app:argType="com.example.notesapp.Note"
+            />
     </fragment>
 </navigation>

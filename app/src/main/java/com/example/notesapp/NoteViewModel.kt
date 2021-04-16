@@ -24,4 +24,10 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
             noteRepository.notEkle(note)
         }
     }
+
+    fun notGuncelle(note : Note) {
+        viewModelScope.launch(Dispatchers.IO) {
+            noteRepository.notGuncelle(note)
+        }
+    }
 }
